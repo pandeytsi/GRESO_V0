@@ -24,7 +24,7 @@ This project analyzes OCO-2 satellite data to compute global annual CO2 growth r
 
 ```bash
 # Clone or download the project files
-cd /path/to/project/
+cd <project path>
 
 # Install dependencies (if not already available)
 pip install numpy pandas xarray matplotlib scipy python-dateutil
