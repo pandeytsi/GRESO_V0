@@ -2,6 +2,10 @@
 
 **Global Rate of change of CO2 from Space-based Observations**
 
+![Annual CO2 Growth Rates](annual_growth_rate.png)
+
+*Figure: Annual CO2 growth rates from OCO-2 satellite observations (blue) compared to NOAA ground-based measurements (red).*
+
 A Python package for calculating annual CO2 growth rates from OCO-2 satellite observations using the MIPV11 format and comparing with NOAA reference data.
 
 ## Overview
@@ -149,11 +153,7 @@ config = AnalysisConfig(
 
 ### Visualization
 
-The analysis generates a plot comparing OCO-2 derived annual CO2 growth rates with NOAA reference data:
-
-![Annual CO2 Growth Rates](annual_growth_rate.png)
-
-*Figure: Annual CO2 growth rates from OCO-2 satellite observations (blue) compared to NOAA ground-based measurements (red). The excellent agreement validates the satellite-based approach.*
+The analysis generates a plot comparing OCO-2 derived annual CO2 growth rates with NOAA reference data (shown at the top of this README).
 
 ### Example Output
 
