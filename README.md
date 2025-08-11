@@ -75,7 +75,7 @@ Example output:
 ============================================================
 ANNUAL GROWTH RATES - ALL DATA
 ============================================================
-Year       | Growth Rate (ppm/yr) | NOAA Growth Rate (ppm/yr)
+Year       | OCO-2 Growth Rate (ppm/yr) | NOAA Growth Rate (ppm/yr)
 ------------------------------------------------------------
 2015       |               2.99 | 2.95
 2016       |               2.71 | 2.84

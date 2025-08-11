@@ -180,7 +180,7 @@ class VisualizationManager:
             print("\n" + "="*60)
             print(f"ANNUAL GROWTH RATES - {data_type.upper()} DATA")
             print("="*60)
-            print(f"{'Year':<10} | {'Growth Rate (ppm/yr)':<18} | {'NOAA Growth Rate (ppm/yr)'}")
+            print(f"{'Year':<10} | {'OCO-2 Growth Rate (ppm/yr)':<18} | {'NOAA Growth Rate (ppm/yr)'}")
             print("-" * 60)
             
             # Print each year's growth rate
