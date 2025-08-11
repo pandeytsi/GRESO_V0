@@ -5,9 +5,7 @@ GRESO (Global Rate of change of CO2 from Space-based Observations) Analysis
 This script analyzes OCO-2 satellite data to calculate annual CO2 growth rates
 and compares them with NOAA Marine Boundary Layer reference data.
 
-Author: Refactored for improved maintainability
 """
-
 import sys
 import logging
 from pathlib import Path
@@ -47,7 +45,7 @@ class AnalysisConfig:
     growth_rate_end_year: int = 2025
     
     # Plotting parameters
-    figure_size: Tuple[int, int] = (12, 4)
+    figure_size: Tuple[int, int] = (7, 4)
     figure_dpi: int = 300
     output_filename: str = "annual_growth_rate.png"
     
@@ -66,8 +64,6 @@ def create_standard_config(data_file_path: str) -> AnalysisConfig:
     config.file_format = "standard"
     config.output_filename = "annual_growth_rate_standard.png"
     return config
-
-
 
 
 
@@ -152,8 +148,8 @@ class VisualizationManager:
         self.config = config
         
         # Define styling
-        self.markers = {"all": "o", "LNLG": "s", "OG": "^"}
-        self.colors = {"all": "blue", "LNLG": "red", "OG": "green"}
+        self.markers = {"all": "s", "LNLG": "s", "OG": "^"}
+        self.colors = {"all": "black", "LNLG": "red", "OG": "green"}
     
     def create_growth_rate_plot(self, oco_results: Dict, noaa_data: pd.DataFrame, 
                                data_types: List[str] = ["all"]) -> plt.Figure:
@@ -173,7 +169,7 @@ class VisualizationManager:
             ax.plot(annual_years - 0.5, annual_rates, 
                    marker=self.markers[data_type], 
                    color=self.colors[data_type], 
-                   label=f"OCO-2 GRESO ({data_type})", 
+                   label=f"OCO-2 GRESO", 
                    linewidth=0.5, alpha=0.7, zorder=10)
             
             # Store results and calculate statistics
@@ -191,12 +187,12 @@ class VisualizationManager:
             for i, (year, rate) in enumerate(zip(annual_years, annual_rates)):
                 noaa_row = noaa_data[noaa_data["year"] == int(year)]
                 noaa_rate = noaa_row["growth"].values[0] if not noaa_row.empty else "N/A"
-                print(f"{int(year):<10} | {rate:>18.4f} | {noaa_rate if isinstance(noaa_rate, str) else noaa_rate:.4f}")
+                print(f"{int(year):<10} | {rate:>18.2f} | {noaa_rate if isinstance(noaa_rate, str) else noaa_rate:.2f}")
             
             # Print mean values
             noaa_mean = np.mean(noaa_data["growth"][:-1])
             print("-" * 60)
-            print(f"{'MEAN':<10} | {mean_rate:>18.4f} | {noaa_mean:.4f}")
+            print(f"{'MEAN':<10} | {mean_rate:>18.2f} | {noaa_mean:.2f}")
             print("="*60 + "\n")
             
             logger.info(f"{data_type} mean growth rate: {mean_rate:.4f} ppm/yr")
@@ -204,7 +200,7 @@ class VisualizationManager:
         
         # Plot NOAA reference data
         ax.errorbar(noaa_data["year"], noaa_data["growth"], yerr=noaa_data["std"], 
-                   fmt='x-', color='black', ecolor='gray', capsize=5, 
+                   fmt='x-', color='red', ecolor='gray', capsize=5, 
                    linewidth=0.5, label="NOAA MBL")
         
         noaa_mean = np.mean(noaa_data["growth"][:-1])
