@@ -1,11 +1,11 @@
-# GRESO: Global Rate of CO2 from Space-based Observations
+# GRESO: Growth Rate from Satellite Observations
 
 ![Annual CO2 Growth Rates](annual_growth_rate.png)
 *Figure: Growth rates from OCO-2 satellite observations compared to NOAA ground-based measurements*
 
 ## Overview
 
-The Growth Rate from Satellite Observations (GRESO) code analyzes OCO-2 satellite data to compute global annual CO2 growth rates. The code validates these growth rates against NOAA ground-based measurements. 
+The GRESO code analyzes OCO-2 satellite data to compute global annual CO2 growth rates. The code validates these growth rates against NOAA ground-based measurements. 
 
 **Publication**: Pandey, S., et al. (2024). [Toward low-latency estimation of atmospheric CO₂ growth rates using satellite observations](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2023AV001145). *AGU Advances*, 5, e2023AV001145.
 
