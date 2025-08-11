@@ -121,4 +121,4 @@ AGU Advances, 5, e2023AV001145. https://doi.org/10.1029/2023AV001145
 
 **Developer**: Sudhanshu Pandey  
 **Affiliation**: NASA Jet Propulsion Laboratory / California Institute of Technology  
-**Email**: sudhanshu.pandey@jpl.nasa.gov
+**Email**: sudhanshu.pandey[at]jpl.nasa.gov
