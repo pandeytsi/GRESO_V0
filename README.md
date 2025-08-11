@@ -5,7 +5,7 @@
 
 ## Overview
 
-The GRESO code analyzes OCO-2 satellite data to compute global annual CO2 growth rates. The code validates these growth rates against NOAA ground-based measurements. 
+The GRESO code analyzes OCO-2 satellite data to compute global annual CO2 growth rates. 
 
 **Publication**: Pandey, S., et al. (2024). [Toward low-latency estimation of atmospheric CO₂ growth rates using satellite observations](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2023AV001145). *AGU Advances*, 5, e2023AV001145.
 
@@ -92,7 +92,7 @@ MEAN       |               2.50 | 2.50
 ============================================================
 ```
 
-**Validation**: Excellent agreement between OCO-2 and NOAA measurements (difference: 0.0006 ppm/yr)
+
 
 ## Code Structure
 
