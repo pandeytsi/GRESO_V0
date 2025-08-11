@@ -12,6 +12,9 @@ A Python package for calculating annual CO2 growth rates from OCO-2 satellite ob
 
 This project analyzes OCO-2 satellite data to compute global annual CO2 growth rates and validates results against NOAA ground-based measurements. The analysis uses 10-second resolution OCO-2 data to calculate spatially-weighted global averages and apply seasonal detrending to isolate long-term trends.
 
+**Primary Publication**:
+Pandey, S., et al. (2024). Toward low-latency estimation of atmospheric CO₂ growth rates using satellite observations: Evaluating sampling errors of satellite and in situ observing approaches. *AGU Advances*, 5, e2023AV001145. https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2023AV001145
+
 
 ## Quick Start
 
@@ -200,30 +203,6 @@ The codebase follows object-oriented design principles:
 - `deseasonalize()`: Remove seasonal cycles
 - `monthlyGrowthRate()`: Calculate monthly growth rates
 - `areaWeighted()`: Spatial averaging with latitude weights
-
-## Troubleshooting
-
-### Common Issues
-
-1. **File Not Found**: Ensure OCO-2 data file is in correct location
-2. **Memory Issues**: Reduce dataset size or increase system memory
-3. **Network Issues**: NOAA data download may fail - retry or use cached data
-
-### Error Messages
-
-- "No valid observations": Check data file path and quality filters
-- "Interpolation failed": Reduce spatial/temporal filtering
-- "Memory error": Process data in smaller chunks
-
-
-
-
-### Testing
-
-- Validate results against known benchmarks
-- Test with different data types (OG, LNLG, all)
-- Verify spatial and temporal filtering
-- Check edge cases (empty datasets, missing data)
 
 ## License
 
