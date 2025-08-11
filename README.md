@@ -64,13 +64,6 @@ config.data_file = "/path/to/OCO2_b11.2_10sec_GOOD_r3.nc4"
 
 analyzer = CO2GrowthRateAnalyzer(config)
 results = analyzer.process_oco_data(["all"])
-
-# Example: Using legacy standard format
-from greso_analysis import create_standard_config
-
-config = create_standard_config("/path/to/OCO2_b11.2-lite_10sec_GOOD_140906-250430.h5")
-analyzer = CO2GrowthRateAnalyzer(config)
-results = analyzer.process_oco_data(["all"])
 ```
 
 ## Data Requirements
@@ -83,10 +76,6 @@ results = analyzer.process_oco_data(["all"])
 - Format: NetCDF4 with 10-second resolution OCO-2 observations
 - Variable: Uses `xco2_2019_scale` for improved calibration
 
-**Legacy Standard Format (Optional)**:
-- File: `OCO2_b11.2-lite_10sec_GOOD_140906-250430.h5`
-- Format: HDF5 with 10-second resolution OCO-2 observations
-- Variable: Uses `xco2`
 
 **NOAA Reference Data**:
 - Source: `ftp://aftp.cmdl.noaa.gov/products/trends/co2/co2_gr_gl.txt`
@@ -135,7 +124,7 @@ config = AnalysisConfig(
 ### Data Processing Pipeline
 
 1. **Quality Filtering**: Apply uncertainty and data type filters
-2. **Spatial Filtering**: Restrict to tropical/subtropical latitudes ([-50°, 50°])
+2. **Spatial Filtering**: Restrict to latitudes ([-50°, 50°])
 3. **Temporal Processing**: Convert sounding IDs to datetime objects
 4. **Spatial Weighting**: Area-weighted averaging by latitude
 5. **Seasonal Detrending**: Remove seasonal cycles using harmonic analysis
@@ -143,9 +132,9 @@ config = AnalysisConfig(
 
 ### Scientific Approach
 
-- **Spatial Coverage**: Global analysis with tropical focus
+- **Spatial Coverage**: Global analysis
 - **Temporal Resolution**: 10-second observations aggregated to monthly means
-- **Detrending Method**: Harmonic analysis to remove seasonal cycles
+- **Desesasoning Method**: Harmonic analysis to remove seasonal cycles
 - **Growth Rate Calculation**: Annual differences in deseasonalized CO2
 - **Validation**: Direct comparison with NOAA global mean growth rates
 
@@ -179,7 +168,7 @@ MEAN       |             2.5046 | 2.5044
 ```
 
 ### Validation
-
+Long term agreement between OCO-2 and NOAA
 - **OCO-2 Mean Growth Rate**: 2.5050 ppm/yr
 - **NOAA Mean Growth Rate**: 2.5044 ppm/yr
 - **Difference**: 0.0006 ppm/yr (excellent agreement)
@@ -258,6 +247,7 @@ Pandey, S., et al. (2024). Toward low-latency estimation of atmospheric CO₂ gr
 **Contact**: sudhanshu.pandey@jpl.nasa.gov  
 
 **Project**: Satellite Growth Rates
+
 **Development Date**: August 2025  
 
 
