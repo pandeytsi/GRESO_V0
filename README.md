@@ -257,7 +257,7 @@ Pandey, S., et al. (2024). Toward low-latency estimation of atmospheric CO₂ gr
 **Affiliation**: NASA Jet Propulsion Laboratory / California Institute of Technology  
 **Contact**: sudhanshu.pandey@jpl.nasa.gov  
 
-**Project**: GRESO (Global Rate Estimates from Satellite Observations)  
+**Project**: Satellite Growth Rates
 **Development Date**: August 2025  
 
 
